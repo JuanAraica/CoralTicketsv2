@@ -176,8 +176,12 @@ namespace CoralTickets.Server.Controllers.db_a905b1_coraldb
                 {
                     return BadRequest();
                 }
-
-                this.OnCoralticketCreated(item);
+                
+                    item.Estado = "Pendiente";
+                    item.Hora = DateTime.Now.ToString("hh:mm:ss");
+                    item.Observacion = "Pendiente revision";
+                    item.TIManager = "Pendiente";
+                    this.OnCoralticketCreated(item);
                 this.context.Coraltickets.Add(item);
                 this.context.SaveChanges();
 
