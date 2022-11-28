@@ -4,14 +4,14 @@
 
 <PageTitle>Add Coralticket</PageTitle>
     <div class="col-md-12">
-        <RadzenAlert Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">Cannot save Coralticket</RadzenAlert>
+        <RadzenAlert Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">No se pudo crear el Registro&nbsp;</RadzenAlert>
         <RadzenTemplateForm TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Data="@coralticket" Visible="@(coralticket != null)" Submit="@FormSubmit">
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
                     <RadzenLabel Text="idequipo" Component="idequipo" style="width: 100%" />
                 </div>
                 <div class="col-md-9">
-                    <RadzenNumeric style="display: block; width: 100%" @bind-Value="@coralticket.idequipo" Name="idequipo" />
+                    <RadzenNumeric style="display: block; width: 100%" @bind-Value="@coralticket.idequipo" Name="idequipo" Placeholder="SI DESCONOCE EL DATO DEJAR EN BLANCO" />
                 </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
@@ -32,22 +32,8 @@
                     <RadzenRequiredValidator Component="Operacion" Text="Operacion is required" />
                 </div>
             </div>
-            <div style="margin-bottom: 1rem" class="row">
-                <div class="col-md-3">
-                    <RadzenLabel Text="FechaExpiracion" Component="FechaExpiracion" style="width: 100%" />
-                </div>
-                <div class="col-md-9">
-                    <RadzenDatePicker DateFormat="MM/dd/yyyy" style="display: block; width: 100%" @bind-Value="@coralticket.FechaExpiracion" Name="FechaExpiracion" />
-                </div>
-            </div>
-            <div style="margin-bottom: 1rem" class="row">
-                <div class="col-md-3">
-                    <RadzenLabel Text="HoraExpiracion" Component="HoraExpiracion" style="width: 100%" />
-                </div>
-                <div class="col-md-9">
-                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@coralticket.HoraExpiracion" Name="HoraExpiracion" />
-                </div>
-            </div>
+
+
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
                     <RadzenLabel Text="TipoConsulta" Component="TipoConsulta" style="width: 100%" />
@@ -66,66 +52,10 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
-                    <RadzenLabel Text="Evidencia1" Component="Evidencia1" style="width: 100%" />
-                </div>
-                <div class="col-md-9">
-                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@coralticket.Evidencia1" Name="Evidencia1" />
-                </div>
-            </div>
-            <div style="margin-bottom: 1rem" class="row">
-                <div class="col-md-3">
-                    <RadzenLabel Text="Evidencia2" Component="Evidencia2" style="width: 100%" />
-                </div>
-                <div class="col-md-9">
-                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@coralticket.Evidencia2" Name="Evidencia2" />
-                </div>
-            </div>
-            <div style="margin-bottom: 1rem" class="row">
-                <div class="col-md-3">
-                    <RadzenLabel Text="Evidencia3" Component="Evidencia3" style="width: 100%" />
-                </div>
-                <div class="col-md-9">
-                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@coralticket.Evidencia3" Name="Evidencia3" />
-                </div>
-            </div>
-            <div style="margin-bottom: 1rem" class="row">
-                <div class="col-md-3">
-                    <RadzenLabel Text="Fecha" Component="Fecha" style="width: 100%" />
-                </div>
-                <div class="col-md-9">
-                    <RadzenDatePicker DateFormat="MM/dd/yyyy" style="display: block; width: 100%" @bind-Value="@coralticket.Fecha" Name="Fecha" />
-                </div>
-            </div>
-            <div style="margin-bottom: 1rem" class="row">
-                <div class="col-md-3">
-                    <RadzenLabel Text="Hora" Component="Hora" style="width: 100%" />
-                </div>
-                <div class="col-md-9">
-                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@coralticket.Hora" Name="Hora" />
-                </div>
-            </div>
-            <div style="margin-bottom: 1rem" class="row">
-                <div class="col-md-3">
                     <RadzenLabel Text="Estado" Component="Estado" style="width: 100%" />
                 </div>
                 <div class="col-md-9">
                     <RadzenTextBox style="display: block; width: 100%" @bind-Value="@coralticket.Estado" Name="Estado" />
-                </div>
-            </div>
-            <div style="margin-bottom: 1rem" class="row">
-                <div class="col-md-3">
-                    <RadzenLabel Text="Observacion" Component="Observacion" style="width: 100%" />
-                </div>
-                <div class="col-md-9">
-                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@coralticket.Observacion" Name="Observacion" />
-                </div>
-            </div>
-            <div style="margin-bottom: 1rem" class="row">
-                <div class="col-md-3">
-                    <RadzenLabel Text="TIManager" Component="TIManager" style="width: 100%" />
-                </div>
-                <div class="col-md-9">
-                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@coralticket.TIManager" Name="TIManager" />
                 </div>
             </div>
             <div class="row">

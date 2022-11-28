@@ -14,8 +14,9 @@
         <RadzenDataGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@users"
             TItem="CoralTickets.Server.Models.ApplicationUser" RowSelect="@RowSelect">
             <Columns>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.ApplicationUser" Property="UserName" Title="User Name" />
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.ApplicationUser" Property="Email" Title="Email" />
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.ApplicationUser" Property="UserName" Title="Usuario" />
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.ApplicationUser" Property="Email" Title="Correo" />
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.ApplicationUser" Property="Password" Title="Contraseña"></RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.ApplicationUser" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" Width="70px">
                     <Template Context="user">
                         <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small"

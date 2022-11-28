@@ -13,7 +13,7 @@
         <RadzenAlert Size="AlertSize.Large" Shade="Shade.Light" AlertStyle="AlertStyle.Danger" Variant="Variant.Flat" Title="Cannot delete role" Visible="@errorVisible">@error</RadzenAlert>
         <RadzenDataGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@roles" TItem="CoralTickets.Server.Models.ApplicationRole">
             <Columns>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.ApplicationRole" Property="Name" Title="Name" />
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.ApplicationRole" Property="Name" Title="Rol" />
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.ApplicationRole" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" Width="70px">
                     <Template Context="role">
                         <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small"
