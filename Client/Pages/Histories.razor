@@ -1,6 +1,6 @@
 @page "/histories"
 
-@attribute [Authorize]
+@attribute [Authorize(Roles="admin,TIManager")]
 
 <PageTitle>Histories</PageTitle>
 <div class="row" style="margin-bottom: 1rem">
@@ -25,7 +25,7 @@
         <RadzenDataGrid @ref="grid0"  AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true"
             Data="@histories" Count=count LoadData=@Grid0LoadData  TItem="CoralTickets.Server.Models.db_a905b1_coraldb.History" >
             <Columns>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.History" Property="idHistory" Title="idHistory">
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.History" Property="idHistory" Title="N° deHistory">
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.History" Property="Registro" Title="Registro">
                 </RadzenDataGridColumn>
