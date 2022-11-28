@@ -1,0 +1,70 @@
+@page "/coraltickets"
+
+@attribute [Authorize(Roles="Operador,TIManager,admin,Cliente")]
+
+<PageTitle>Coraltickets</PageTitle>
+<div class="row" style="margin-bottom: 1rem">
+    <div class="col-12 col-md-6">
+        <RadzenText Text="Coraltickets" TextStyle="TextStyle.H3" TagName="TagName.H1" style="margin: 0" />
+    </div>
+    <div class="col-12 col-md-6 justify-content-start justify-content-md-end" style="display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem">
+    <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@ExportClick" Variant="Variant.Flat" Shade="Shade.Lighter">
+        <RadzenSplitButtonItem Text="Excel" Value="xlsx" />
+        <RadzenSplitButtonItem Text="CSV" Value="csv" />
+    </RadzenSplitButton>
+    <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@AddButtonClick" Variant="Variant.Flat" />
+    </div>
+</div>
+<div class="row" style="margin-bottom: 1rem">
+    <div class="col-12">
+        <RadzenTextBox Placeholder="Search ..." style="display: block; width: 100%" @oninput="@Search" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <RadzenDataGrid @ref="grid0"  AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true"
+            Data="@coraltickets" Count=count LoadData=@Grid0LoadData  TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" RowDoubleClick="@EditRow" >
+            <Columns>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="idTicket" Title="idTicket">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="idequipo" Title="idequipo">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="Usuario" Title="Usuario">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="Operacion" Title="Operacion">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="FechaExpiracion" Title="FechaExpiracion">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="HoraExpiracion" Title="HoraExpiracion">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="TipoConsulta" Title="TipoConsulta">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="Descripcion" Title="Descripcion">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="Evidencia1" Title="Evidencia1">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="Evidencia2" Title="Evidencia2">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="Evidencia3" Title="Evidencia3">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="Fecha" Title="Fecha">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="Hora" Title="Hora">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="Estado" Title="Estado">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="Observacion" Title="Observacion">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Property="TIManager" Title="TIManager">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+                    <Template Context="coralticket">
+                        <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Size="ButtonSize.Medium"
+                            Shade="Shade.Lighter" Variant="Variant.Flat"
+                            Click=@(args => GridDeleteButtonClick(args, coralticket)) @onclick:stopPropagation="true" />
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+        </RadzenDataGrid>
+    </div>
+</div>
