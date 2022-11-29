@@ -1,4 +1,5 @@
-@page "/edit-mantenimiento"
+@page "/edit-mantenimiento"
+
 @attribute [Authorize]
 
 <PageTitle>Edit Mantenimiento</PageTitle>
@@ -7,7 +8,7 @@
         <RadzenTemplateForm TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Mantenimiento" Data="@mantenimiento" Visible="@(mantenimiento != null)" Submit="@FormSubmit">
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
-                    <RadzenLabel Text="FechaProgramada" Component="FechaProgramada" style="width: 100%" />
+                    <RadzenLabel Text="Fecha Programada" Component="FechaProgramada" style="width: 100%" />
                 </div>
                 <div class="col-md-9">
                     <RadzenDatePicker DateFormat="MM/dd/yyyy" style="display: block; width: 100%" @bind-Value="@mantenimiento.FechaProgramada" Name="FechaProgramada" />
@@ -15,7 +16,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
-                    <RadzenLabel Text="TipoMantenimiento" Component="TipoMantenimiento" style="width: 100%" />
+                    <RadzenLabel Text="Tipo de Mantenimiento" Component="TipoMantenimiento" style="width: 100%" />
                 </div>
                 <div class="col-md-9">
                     <RadzenTextBox style="display: block; width: 100%" @bind-Value="@mantenimiento.TipoMantenimiento" Name="TipoMantenimiento" />

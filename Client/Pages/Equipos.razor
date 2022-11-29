@@ -1,4 +1,5 @@
-@page "/equipos"
+@page "/equipos"
+
 @attribute [Authorize]
 
 <PageTitle>Equipos</PageTitle>
@@ -7,16 +8,16 @@
         <RadzenText Text="Equipos" TextStyle="TextStyle.H3" TagName="TagName.H1" style="margin: 0" />
     </div>
     <div class="col-12 col-md-6 justify-content-start justify-content-md-end" style="display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem">
-    <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@ExportClick" Variant="Variant.Flat" Shade="Shade.Lighter">
+    <RadzenSplitButton Icon="get_app" style="margin-left: 10px; margin-bottom: 10px" Text="Export" Click="@ExportClick" Variant="Variant.Flat" Shade="Shade.Lighter" ButtonStyle="Radzen.ButtonStyle.Success">
         <RadzenSplitButtonItem Text="Excel" Value="xlsx" />
         <RadzenSplitButtonItem Text="CSV" Value="csv" />
     </RadzenSplitButton>
-    <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@AddButtonClick" Variant="Variant.Flat" />
+    <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Agregar" Click="@AddButtonClick" Variant="Variant.Flat" />
     </div>
 </div>
 <div class="row" style="margin-bottom: 1rem">
     <div class="col-12">
-        <RadzenTextBox Placeholder="Search ..." style="display: block; width: 100%" @oninput="@Search" />
+        <RadzenTextBox Placeholder="Buscar..." style="display: block; width: 100%" @oninput="@Search" />
     </div>
 </div>
 <div class="row">
@@ -34,37 +35,11 @@
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="Modelo" Title="Modelo">
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="NumeroSerie" Title="NumeroSerie">
-                </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="Estado" Title="Estado">
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="Ubicacion" Title="Ubicacion">
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="Descripcion" Title="Descripcion">
-                </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="UltimoMantenimiento" Title="UltimoMantenimiento">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="MantenimientoProgramado" Title="MantenimientoProgramado">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="FechaCompra" Title="FechaCompra">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="FechaGarantia" Title="FechaGarantia">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="CantidadBodega" Title="CantidadBodega">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="AnyDesk" Title="AnyDesk">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="AnyDeskPass" Title="AnyDeskPass">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="TeamVewr" Title="TeamVewr">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="TeamVewrPass" Title="TeamVewrPass">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="Ipnum" Title="Ipnum">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="FechaIngreso" Title="FechaIngreso">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="HoraIngreso" Title="HoraIngreso">
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
                     <Template Context="equipo">

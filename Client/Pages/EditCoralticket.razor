@@ -4,7 +4,7 @@
 
 <PageTitle>Edit Coralticket</PageTitle>
     <div class="col-md-12">
-        <RadzenAlert Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">Cannot save Coralticket</RadzenAlert>
+        <RadzenAlert Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">No Se Pudo Actualizar El Registro</RadzenAlert>
         <RadzenTemplateForm TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket" Data="@coralticket" Visible="@(coralticket != null)" Submit="@FormSubmit">
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
@@ -34,7 +34,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
-                    <RadzenLabel Text="FechaExpiracion" Component="FechaExpiracion" style="width: 100%" />
+                    <RadzenLabel Text="Fecha de Expiracion" Component="FechaExpiracion" style="width: 100%" />
                 </div>
                 <div class="col-md-9">
                     <RadzenDatePicker DateFormat="MM/dd/yyyy" style="display: block; width: 100%" @bind-Value="@coralticket.FechaExpiracion" Name="FechaExpiracion" />
@@ -42,7 +42,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
-                    <RadzenLabel Text="HoraExpiracion" Component="HoraExpiracion" style="width: 100%" />
+                    <RadzenLabel Text="Hora de Expiracion" Component="HoraExpiracion" style="width: 100%" />
                 </div>
                 <div class="col-md-9">
                     <RadzenTextBox style="display: block; width: 100%" @bind-Value="@coralticket.HoraExpiracion" Name="HoraExpiracion" />
@@ -50,7 +50,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
-                    <RadzenLabel Text="TipoConsulta" Component="TipoConsulta" style="width: 100%" />
+                    <RadzenLabel Text="Tipo de Consulta" Component="TipoConsulta" style="width: 100%" />
                 </div>
                 <div class="col-md-9">
                     <RadzenTextBox style="display: block; width: 100%" @bind-Value="@coralticket.TipoConsulta" Name="TipoConsulta" />
@@ -122,7 +122,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
-                    <RadzenLabel Text="TIManager" Component="TIManager" style="width: 100%" />
+                    <RadzenLabel Text="TI Manager" Component="TIManager" style="width: 100%" />
                 </div>
                 <div class="col-md-9">
                     <RadzenTextBox style="display: block; width: 100%" @bind-Value="@coralticket.TIManager" Name="TIManager" />
