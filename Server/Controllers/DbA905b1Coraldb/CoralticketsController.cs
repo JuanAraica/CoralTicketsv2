@@ -176,7 +176,8 @@ namespace CoralTickets.Server.Controllers.db_a905b1_coraldb
                 {
                     return BadRequest();
                 }
-                
+
+                     item.Fecha = DateTime.Now;
                     item.Estado = "Pendiente";
                     item.Hora = DateTime.Now.ToString("hh:mm:ss");
                     item.Observacion = "Pendiente revision";

@@ -6,6 +6,7 @@ using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
+
 using Microsoft.AspNetCore.OData.Query;
 using Microsoft.AspNetCore.OData.Routing.Controllers;
 using Microsoft.AspNetCore.OData.Results;
@@ -20,14 +21,30 @@ namespace CoralTickets.Server.Controllers.db_a905b1_coraldb
     [Route("odata/db_a905b1_coraldb/Equipos")]
     public partial class EquiposController : ODataController
     {
+        Seguridad vigilante = new Seguridad();
         private CoralTickets.Server.Data.db_a905b1_coraldbContext context;
+
+        public void RegistrarEvento(string mensaje)
+        {
+            CoralTickets.Server.Models.db_a905b1_coraldb.History histo = new Models.db_a905b1_coraldb.History();
+            histo.Registro = mensaje;
+            histo.Fecha = DateTime.UtcNow.ToString("MM-dd-yyyy");
+            histo.Hora = DateTime.Now.ToString("hh:mm:ss");
+
+
+            this.context.Histories.Add(histo);
+            this.context.SaveChanges();
+
+        }
+
+
 
         public EquiposController(CoralTickets.Server.Data.db_a905b1_coraldbContext context)
         {
             this.context = context;
         }
 
-    
+
         [HttpGet]
         [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
         public IEnumerable<CoralTickets.Server.Models.db_a905b1_coraldb.Equipo> GetEquipos()
@@ -159,6 +176,11 @@ namespace CoralTickets.Server.Controllers.db_a905b1_coraldb
             }
         }
 
+
+
+
+
+
         partial void OnEquipoCreated(CoralTickets.Server.Models.db_a905b1_coraldb.Equipo item);
         partial void OnAfterEquipoCreated(CoralTickets.Server.Models.db_a905b1_coraldb.Equipo item);
 
@@ -177,10 +199,14 @@ namespace CoralTickets.Server.Controllers.db_a905b1_coraldb
                 {
                     return BadRequest();
                 }
+                RegistrarEvento("Se ha agregado un/una " + item.TipoEquipo + ", marca: " + item.Marca + ", Modelo " + item.Modelo + ", para " + item.Poseedor + " " + item.Ubicacion);
+
+
 
                 this.OnEquipoCreated(item);
                 this.context.Equipos.Add(item);
                 this.context.SaveChanges();
+
 
                 var itemToReturn = this.context.Equipos.Where(i => i.idequipo == item.idequipo);
 

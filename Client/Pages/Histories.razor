@@ -17,7 +17,7 @@
 </div>
 <div class="row" style="margin-bottom: 1rem">
     <div class="col-12">
-        <RadzenTextBox Placeholder="Search ..." style="display: block; width: 100%" @oninput="@Search" />
+        <RadzenTextBox Placeholder="Buscar..." style="display: block; width: 100%" @oninput="@Search" />
     </div>
 </div>
 <div class="row">
@@ -25,8 +25,6 @@
         <RadzenDataGrid @ref="grid0"  AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true"
             Data="@histories" Count=count LoadData=@Grid0LoadData  TItem="CoralTickets.Server.Models.db_a905b1_coraldb.History" >
             <Columns>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.History" Property="idHistory" Title="N° deHistory">
-                </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.History" Property="Registro" Title="Registro">
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.History" Property="Fecha" Title="Fecha">
