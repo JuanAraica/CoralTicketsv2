@@ -1,31 +1,12 @@
 @page "/home"
 <PageTitle>Index</PageTitle>
 <div class="row pt-5 px-5">
-    <div class="col-12">
-        <RadzenDataList TItem="dynamic"></RadzenDataList>
-        <RadzenDataList TItem="dynamic"></RadzenDataList>
-        <RadzenCard Style="margin-top: 40px; padding: 20px 40px 40px;">
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <RadzenIcon Icon="smart_button" Style="margin-top: 20px; width: 48px; height: 48px; font-size: 48px; color: var(--rz-text-title-color);"></RadzenIcon>
-                    <RadzenText Text="Learn the Fundamentals" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
-                    <RadzenLink Text="Docs" Path="https://www.radzen.com/blazor-studio/documentation/" Icon="east" Target="_blank" Style="font-size: 18px"></RadzenLink>
-                    <RadzenLink Text="Videos" Path="https://youtube.com/playlist?list=PLQyJPeb3xHcBij_RbHD__2TOo8Jv5HQVc" Icon="east" Target="_blank" Style="display: block; font-size: 18px"></RadzenLink>
-                </div>
-                <div class="col-12 col-md-4">
-                    <RadzenIcon Icon="code" Style="margin-top: 20px; width: 48px; height: 48px; font-size: 48px; color: var(--rz-text-title-color);"></RadzenIcon>
-                    <RadzenText Text="Radzen Blazor Components" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
-                    <RadzenLink Text="Demos" Path="https://blazor.radzen.com" Icon="east" Target="_blank" Style="font-size: 18px"></RadzenLink>
-                </div>
-                <div class="col-12 col-md-4">
-                    <RadzenIcon Icon="people_outline" Style="margin-top: 20px; width: 48px; height: 48px; font-size: 48px; color: var(--rz-text-title-color);"></RadzenIcon>
-                    <RadzenText Text="Radzen Community" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
-                    <RadzenLink Text="Radzen Blazor Studio Forums" Path="https://forum.radzen.com/c/radzen-blazor-studio/12" Icon="east" Target="_blank" Style="font-size: 18px"></RadzenLink>
-                </div>
-            </div>
-        </RadzenCard>
-    </div>
 </div>
+<RadzenGrid TItem="dynamic">
+    <Columns>
+        <RadzenGridColumn TItem="dynamic"></RadzenGridColumn>
+    </Columns>
+</RadzenGrid>
 <RadzenDataGrid TItem="dynamic" ShowEmptyMessage="true">
     <Columns>
     </Columns>

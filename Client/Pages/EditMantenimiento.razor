@@ -4,7 +4,7 @@
 
 <PageTitle>Edit Mantenimiento</PageTitle>
     <div class="col-md-12">
-        <RadzenAlert Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">Cannot save Mantenimiento</RadzenAlert>
+        <RadzenAlert Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">No Se Pudo Actualizar El Registro</RadzenAlert>
         <RadzenTemplateForm TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Mantenimiento" Data="@mantenimiento" Visible="@(mantenimiento != null)" Submit="@FormSubmit">
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
@@ -66,8 +66,8 @@
             </div>
             <div class="row">
                 <div class="col d-flex justify-content-end" style="margin-top: 1rem">
-                    <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save" Style="margin-right: 0.5rem" Variant="Variant.Flat" />
-                    <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Variant="Variant.Flat" Click="@CancelButtonClick"  />
+                    <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Guardar" Style="margin-right: 0.5rem" Variant="Variant.Flat" />
+                    <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancelar" Variant="Variant.Flat" Click="@CancelButtonClick"  />
                 </div>
             </div>
         </RadzenTemplateForm>

@@ -30,8 +30,6 @@ namespace CoralTickets.Server.Controllers.db_a905b1_coraldb
             histo.Registro = mensaje;
             histo.Fecha = DateTime.UtcNow.ToString("MM-dd-yyyy");
             histo.Hora = DateTime.Now.ToString("hh:mm:ss");
-
-
             this.context.Histories.Add(histo);
             this.context.SaveChanges();
 
@@ -95,7 +93,10 @@ namespace CoralTickets.Server.Controllers.db_a905b1_coraldb
                 }
                 this.OnEquipoDeleted(item);
                 this.context.Equipos.Remove(item);
-                this.context.SaveChanges();
+
+                this.context.SaveChanges();                
+                RegistrarEvento("Se ha eliminado el/la " + item.TipoEquipo + ", Num: " + item.idequipo + ", marca: " + item.Marca + ", Modelo " + item.Modelo + ", de " + item.Poseedor + " en " + item.Ubicacion);
+
                 this.OnAfterEquipoDeleted(item);
 
                 return new NoContentResult();
@@ -129,6 +130,8 @@ namespace CoralTickets.Server.Controllers.db_a905b1_coraldb
                 this.OnEquipoUpdated(item);
                 this.context.Equipos.Update(item);
                 this.context.SaveChanges();
+                RegistrarEvento("Se ha actualizado registro de el/la " + item.TipoEquipo + ", Num: " + item.idequipo + ", marca: " + item.Marca + ", Modelo " + item.Modelo + ", de " + item.Poseedor + " en " + item.Ubicacion);
+
 
                 var itemToReturn = this.context.Equipos.Where(i => i.idequipo == key);
                 ;
@@ -199,7 +202,7 @@ namespace CoralTickets.Server.Controllers.db_a905b1_coraldb
                 {
                     return BadRequest();
                 }
-                RegistrarEvento("Se ha agregado un/una " + item.TipoEquipo + ", marca: " + item.Marca + ", Modelo " + item.Modelo + ", para " + item.Poseedor + " " + item.Ubicacion);
+                RegistrarEvento("Se ha agregado un/una " + item.TipoEquipo + ", marca: " + item.Marca + ", Modelo " + item.Modelo + ", para " + item.Poseedor + " de " + item.Ubicacion);
 
 
 

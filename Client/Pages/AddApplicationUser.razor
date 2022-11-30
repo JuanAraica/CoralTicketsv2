@@ -4,14 +4,14 @@
 <div class="row">
     <div class="col-md-12">
         <RadzenTemplateForm TItem="CoralTickets.Server.Models.ApplicationUser" Data="@user" Visible="@(user != null)" Submit="@FormSubmit">
-            <RadzenAlert Title="Cannot create user" Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">@error</RadzenAlert>
+            <RadzenAlert Title="No se Pudo Crear el Registro " Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">@error</RadzenAlert>
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
-                    <RadzenLabel Component="Email" style="width: 100%" Text="Email" />
+                    <RadzenLabel Component="Email" style="width: 100%" Text="Correo" />
                 </div>
                 <div class="col-md-9">
                     <RadzenTextBox style="display: block; width: 100%" @bind-Value="@(user.Email)" Name="Email" />
-                    <RadzenRequiredValidator Component="Email" Text="Email is required" />
+                    <RadzenRequiredValidator Component="Email" Text="Dato Requerido" />
                 </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
@@ -25,28 +25,28 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
-                    <RadzenLabel Component="Password" style="width: 100%" Text="Password" />
+                    <RadzenLabel Component="Password" style="width: 100%" Text="Contraseña" />
                 </div>
                 <div class="col-md-9">
                     <RadzenPassword style="display: block; width: 100%" @bind-Value="@(user.Password)"
                         Name="Password" />
-                    <RadzenRequiredValidator Component="Password" Text="Password is required" />
+                    <RadzenRequiredValidator Component="Password" Text="Dato Requerido " />
                 </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
-                    <RadzenLabel Component="ConfirmPassword" style="width: 100%" Text="Confirm password" />
+                    <RadzenLabel Component="ConfirmPassword" style="width: 100%" Text="Confirmar Contraseña" />
                 </div>
                 <div class="col-md-9">
                     <RadzenPassword style="display: block; width: 100%" @bind-Value="@(user.ConfirmPassword)"
                         Name="ConfirmPassword" />
-                    <RadzenRequiredValidator Component="ConfirmPassword" Text="ConfirmPassword is required" />
-                    <RadzenCompareValidator Text="Passwords must match" Component="ConfirmPassword" Value="@user.Password" />
+                    <RadzenRequiredValidator Component="ConfirmPassword" Text="Dato Requerido" />
+                    <RadzenCompareValidator Text="Las Contraseñas No Coinciden" Component="ConfirmPassword" Value="@user.Password" />
                 </div>
             </div>
             <div class="row">
                 <div class="col d-flex justify-content-end" style="margin-top: 1rem">
-                    <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" Variant="Variant.Flat" />
+                    <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Guardar" Variant="Variant.Flat" />
                     <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancelar" Click="@CancelClick" Variant="Variant.Flat" Style="margin-left: 0.5rem" />
                 </div>
             </div>

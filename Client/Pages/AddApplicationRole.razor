@@ -4,14 +4,14 @@
 <div class="row">
     <div class="col-md-12">
         <RadzenTemplateForm TItem="CoralTickets.Server.Models.ApplicationRole" Data="@role" Visible="@(role != null)" Submit="@FormSubmit">
-            <RadzenAlert Title="Cannot create role" Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">@error</RadzenAlert>
+            <RadzenAlert Title="No se logro Crear el Registro" Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">@error</RadzenAlert>
             <div style="margin-bottom: 1rem" class="row">
                 <div class="col-md-3">
                     <RadzenLabel Component="Name" style="width: 100%" Text="Nombre" />
                 </div>
                 <div class="col-md-9">
                     <RadzenTextBox style="display: block; width: 100%" @bind-Value="@(role.Name)" Name="Name" />
-                    <RadzenRequiredValidator Component="Name" Text="Name is required" />
+                    <RadzenRequiredValidator Component="Name" Text="Se Requiere Un Nombre" />
                 </div>
             </div>
             <div class="row">

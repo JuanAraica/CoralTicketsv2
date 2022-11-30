@@ -5,12 +5,12 @@
 <div class="row">
     <div class="col-12 d-flex justify-content-between align-items-center" style="margin-bottom: 1rem">
         <RadzenText Text="Roles" TextStyle="TextStyle.H3" TagName="TagName.H1" style="margin: 0" />
-        <RadzenButton Icon="add_circle_outline" Text="Add" Click="@AddClick" Variant="Variant.Flat" />
+        <RadzenButton Icon="add_circle_outline" Text="Agregar" Click="@AddClick" Variant="Variant.Flat" />
     </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-        <RadzenAlert Size="AlertSize.Large" Shade="Shade.Light" AlertStyle="AlertStyle.Danger" Variant="Variant.Flat" Title="Cannot delete role" Visible="@errorVisible">@error</RadzenAlert>
+        <RadzenAlert Size="AlertSize.Large" Shade="Shade.Light" AlertStyle="AlertStyle.Danger" Variant="Variant.Flat" Title="No Se Pudo Eliminar El Registro" Visible="@errorVisible">@error</RadzenAlert>
         <RadzenDataGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@roles" TItem="CoralTickets.Server.Models.ApplicationRole">
             <Columns>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.ApplicationRole" Property="Name" Title="Rol" />

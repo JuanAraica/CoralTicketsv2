@@ -25,21 +25,19 @@
         <RadzenDataGrid @ref="grid0"  AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true"
             Data="@equipos" Count=count LoadData=@Grid0LoadData  TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" RowDoubleClick="@EditRow" >
             <Columns>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="idequipo" Title="idequipo">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="TipoEquipo" Title="TipoEquipo">
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="TipoEquipo" Title="Tipo de Equipo">
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="Marca" Title="Marca">
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="Poseedor" Title="Poseedor">
-                </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="Modelo" Title="Modelo">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="Estado" Title="Estado">
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="Ubicacion" Title="Ubicacion">
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="UltimoMantenimiento" Title="UltimoMantenimiento">
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="Poseedor" Title="Poseedor">
+                                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="Estado" Title="Estado">
+                                                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Property="UltimoMantenimiento" Title="Ultimo Mantenimiento">
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="CoralTickets.Server.Models.db_a905b1_coraldb.Equipo" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
                     <Template Context="equipo">

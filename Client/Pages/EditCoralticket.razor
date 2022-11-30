@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-md-9">
                     <RadzenTextBox style="display: block; width: 100%" @bind-Value="@coralticket.Usuario" Name="Usuario" />
-                    <RadzenRequiredValidator Component="Usuario" Text="Usuario is required" />
+                    <RadzenRequiredValidator Component="Usuario" Text="Dato Requerido" />
                 </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-9">
                     <RadzenTextBox style="display: block; width: 100%" @bind-Value="@coralticket.Operacion" Name="Operacion" />
-                    <RadzenRequiredValidator Component="Operacion" Text="Operacion is required" />
+                    <RadzenRequiredValidator Component="Operacion" Text="Dato Requerido" />
                 </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
@@ -130,8 +130,8 @@
             </div>
             <div class="row">
                 <div class="col d-flex justify-content-end" style="margin-top: 1rem">
-                    <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save" Style="margin-right: 0.5rem" Variant="Variant.Flat" />
-                    <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Variant="Variant.Flat" Click="@CancelButtonClick"  />
+                    <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Guardar" Style="margin-right: 0.5rem" Variant="Variant.Flat" />
+                    <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancelar" Variant="Variant.Flat" Click="@CancelButtonClick"  />
                 </div>
             </div>
         </RadzenTemplateForm>

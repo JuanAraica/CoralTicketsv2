@@ -27,7 +27,18 @@ namespace CoralTickets.Server.Controllers.db_a905b1_coraldb
             this.context = context;
         }
 
-    
+        public void RegistrarEvento(string mensaje)
+        {
+            CoralTickets.Server.Models.db_a905b1_coraldb.History histo = new Models.db_a905b1_coraldb.History();
+            histo.Registro = mensaje;
+            histo.Fecha = DateTime.UtcNow.ToString("MM-dd-yyyy");
+            histo.Hora = DateTime.Now.ToString("hh:mm:ss");
+            this.context.Histories.Add(histo);
+            this.context.SaveChanges();
+
+        }
+
+
         [HttpGet]
         [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
         public IEnumerable<CoralTickets.Server.Models.db_a905b1_coraldb.Coralticket> GetCoraltickets()
